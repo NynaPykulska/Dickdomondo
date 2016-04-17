@@ -1,29 +1,29 @@
 
 public class Vector {
-    Point start;
-    Point end;
+    Point startPoint;
+    Point endPoint;
 
-    public Vector(Point start, Point end) {
-        this.start = start;
-        this.end = end;
+    public Vector(Point startPoint, Point endPoint) {
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
     }
 
     public Vector() {
     }
 
-    public Point getStart() {
-        return start;
+    public Point getStartPoint() {
+        return startPoint;
     }
 
-    public void setStart(Point start) {
-        this.start = start;
+    public void setStartPoint(Point startPoint) {
+        this.startPoint = startPoint;
     }
 
-    public Point getEnd() {
-        return end;
+    public Point getEndPoint() {
+        return endPoint;
     }
 
-    public void setEnd(Point end) {
-        this.end = end;
+    public void setEndPoint(Point endPoint) {
+        this.endPoint = endPoint;
     }
 }
