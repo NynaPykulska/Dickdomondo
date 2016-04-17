@@ -41,7 +41,7 @@ public class YoloConverter {
     }
 
     private ArrayList<GeoVector> convertToGeo() {
-        int len = preferences.length;
+        double len = preferences.length;
         double x1, x2, y1, y2;
         double sum = 0;
 
@@ -52,10 +52,10 @@ public class YoloConverter {
          */
 
         for (int i = 0; i < vectors.size(); i++) {
-            x1 = vectors.get(i).getStart().getX();
-            x2 = vectors.get(i).getEnd().getX();
-            y1 = vectors.get(i).getStart().getY();
-            y2 = vectors.get(i).getEnd().getY();
+            x1 = vectors.get(i).getStartPoint().getX();
+            x2 = vectors.get(i).getEndPoint().getX();
+            y1 = vectors.get(i).getStartPoint().getY();
+            y2 = vectors.get(i).getEndPoint().getY();
             sum +=Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2));
         }
 
@@ -64,9 +64,9 @@ public class YoloConverter {
 
         for (int i = 0; i < vectors.size(); i++) {
             //y
-            deltaLat = (vectors.get(i).getEnd().getY() - vectors.get(i).getStart().getY())*ratio; //[km]
+            deltaLat = (vectors.get(i).getEndPoint().getY() - vectors.get(i).getStartPoint().getY())*ratio; //[km]
             //x
-            deltaLon = (vectors.get(i).getEnd().getX() - vectors.get(i).getStart().getX())*ratio; //[km]
+            deltaLon = (vectors.get(i).getEndPoint().getX() - vectors.get(i).getStartPoint().getX())*ratio; //[km]
 
             /**
              *
