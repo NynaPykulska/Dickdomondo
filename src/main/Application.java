@@ -1,9 +1,21 @@
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Main {
-    public static void main(String[] argv) {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
+@SpringBootApplication
+public class Application {
+    
+    public static void main(String[] args) {
+        ApplicationContext ctx = SpringApplication.run(Application.class, args);
+        
+        init();
+    }
+
+    public static void init() {
         CoordinateSystem coordinateSystem  = new CoordinateSystem();
         Point x0y0 = new Point(0.0,0.0);
         Point x1y0 = new Point(1.0,0.0);
@@ -22,6 +34,6 @@ public class Main {
         list.add(vector4);
 
         coordinateSystem.setPicture(list);
-
     }
+
 }
