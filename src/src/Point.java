@@ -1,7 +1,10 @@
+import java.util.List;
 
 public class Point {
     Double x;
     Double y;
+    Double height;
+    List<String> type;
 
     public Point(Double x, Double y) {
         this.x = x;
