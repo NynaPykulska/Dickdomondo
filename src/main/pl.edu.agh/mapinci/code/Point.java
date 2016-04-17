@@ -1,3 +1,5 @@
+package mapinci.code;
+
 import java.util.List;
 
 public class Point {

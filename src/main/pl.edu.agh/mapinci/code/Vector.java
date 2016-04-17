@@ -1,3 +1,4 @@
+package mapinci.code;
 
 public class Vector {
     Point startPoint;

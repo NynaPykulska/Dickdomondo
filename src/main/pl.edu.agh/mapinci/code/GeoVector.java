@@ -1,3 +1,5 @@
+package mapinci.code;
+
 /**
  * Created by m on 17.04.16.
  */

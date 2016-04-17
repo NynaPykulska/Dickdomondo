@@ -1,3 +1,5 @@
+package mapinci.code;
+
 import java.util.LinkedList;
 import java.util.List;
 
