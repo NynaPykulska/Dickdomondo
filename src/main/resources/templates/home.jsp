@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script>
     function initialize() {
       var mapProp = {
-        center:new google.maps.LatLng(50.0639147,19.923648700000058),
+        center:new google.maps.LatLng(request.getAttribute(${Lat}),request.getAttribute(${Lon})),
         zoom:15,
         mapTypeId:google.maps.MapTypeId.ROADMAP
       };
       var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+
     }
     google.maps.event.addDomListener(window, 'load', initialize);
     </script>

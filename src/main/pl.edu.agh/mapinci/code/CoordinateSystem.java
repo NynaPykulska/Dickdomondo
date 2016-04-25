@@ -4,10 +4,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class CoordinateSystem {
-    List<Vector> picture;
+    public static List<Vector> picture;
 
     public CoordinateSystem() {
-        this.picture = new LinkedList<Vector>();
+        picture = new LinkedList<Vector>();
     }
 
     public List<Vector> getPicture() {
@@ -15,6 +15,6 @@ public class CoordinateSystem {
     }
 
     public void setPicture(List<Vector> picture) {
-        this.picture = picture;
+        CoordinateSystem.picture = picture;
     }
 }
