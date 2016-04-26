@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <div>
+
+        <label th:text="${Lat}">Lat</label>
+        <label th:text="${Lon}">Lon</label>
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+    function initialize() {
+
+        /*[+
+
+         var Lat  = [[${Lat}]];
+         var Lon  = [[${Lon}]];
+
+         +]*/
+
+        var myLatLon= {
+            lat: Lat,
+            lng: Lon
+        };
+
+          var mapProp = {
+            center:new google.maps.LatLng(Lat,Lon),
+            zoom:15,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+        var marker = new google.maps.Marker({
+            position: myLatLon,
+            map: map,
+            title: 'Turbo Marker'
+        });
+
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    /*]]>*/
+    </script>
+    </div>
+</head>
+
+<body>
+    <div id="googleMap" style="width:900px;height:500px;"></div>
+</body>
+
+</html>

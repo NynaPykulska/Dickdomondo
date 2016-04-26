@@ -21,7 +21,7 @@ public class IndexController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("Lat", 50.0639147);
         modelAndView.addObject("Lon", 19.923648700000058);
-        modelAndView.setViewName("home.jsp");
+        modelAndView.setViewName("home");
         return modelAndView;
     }
 
