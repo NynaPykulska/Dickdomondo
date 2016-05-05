@@ -7,8 +7,8 @@
         <label th:text="${Lat}">Lat</label>
         <label th:text="${Lon}">Lon</label>
 </tr>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script th:inline="javascript">
+        <script>
+
         /*<![CDATA[*/
     function initialize() {
 
@@ -17,19 +17,47 @@
          var Lat  = [[${Lat}]];
          var Lon  = [[${Lon}]];
 
+         var lat0 = [[${lat0}]];
+         var lat1 = [[${lat1}]];
+         var lat2 = [[${lat2}]];
+         var lat3 = [[${lat3}]];
+
+         var lon0 = [[${lon0}]];
+         var lon1 = [[${lon1}]];
+         var lon2 = [[${lon2}]];
+         var lon3 = [[${lon3}]];
+
          +]*/
+
+        var mapProp = {
+            center:new google.maps.LatLng(Lat,Lon),
+            zoom:15,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
         var myLatLon= {
             lat: Lat,
             lng: Lon
         };
 
-          var mapProp = {
-            center:new google.maps.LatLng(Lat,Lon),
-            zoom:15,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-          };
-          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var myLatLon0 = {
+            lat: lat0,
+            lng: lon0
+        };
+        var myLatLon1 = {
+            lat: lat1,
+            lng: lon1
+        };
+        var myLatLon2= {
+            lat: lat2,
+            lng: lon2
+        };
+        var myLatLon3= {
+            lat: lat3,
+            lng: lon3
+        };
 
         var marker = new google.maps.Marker({
             position: myLatLon,
@@ -37,12 +65,41 @@
             title: 'Turbo Marker'
         });
 
+        var marker0 = new google.maps.Marker({
+            position: myLatLon0,
+            map: map,
+            title: 'Turbo Marker0'
+        });
+        var marker1 = new google.maps.Marker({
+            position: myLatLon1,
+            map: map,
+            title: 'Turbo Marker1'
+        });
+        var marker2 = new google.maps.Marker({
+            position: myLatLon2,
+            map: map,
+            title: 'Turbo Marker2'
+        });
+        var marker3 = new google.maps.Marker({
+            position: myLatLon3,
+            map: map,
+            title: 'Turbo Marker3'
+        });
+
+
 
         }
-        google.maps.event.addDomListener(window, 'load', initialize);
-
     /*]]>*/
-    </script>
+
+        </script>
+
+         <!--TODO: paste API KEY, remove before commit-->
+
+        <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=HERE_API_KEY"
+        type="text/javascript">
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
     </div>
 </head>
 

@@ -1,6 +1,7 @@
 package mapinci.code;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by m on 17.04.16.
@@ -24,9 +25,9 @@ public class YoloConverter {
     private final double longRatio = 0.83963;
     private Preferences preferences;
     //private ArrayList<GeoVector> results;
-    private ArrayList<Vector> vectors;
+    private List<Vector> vectors;
 
-    public YoloConverter(Preferences preferences, ArrayList<Vector> vectors) {
+    public YoloConverter(Preferences preferences, List<Vector> vectors) {
         this.preferences = preferences;
         this.vectors = vectors;
     }
